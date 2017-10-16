@@ -18,6 +18,7 @@ List of User routes:
 |/api/users/:id|PATCH|update a user with specific new info|
 
 List of filter routes:
+
 |Routes|HTTP|Description|
 |---|---|---|
 |/api/users?name="{name}"|GET|Get {name} match in users|
