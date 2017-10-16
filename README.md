@@ -4,17 +4,34 @@ list of basic routes:
 
 |Routes|HTTP|Description|
 |---|---|---|
-|/api/hello?name={name}|GET|Print hello,  ```diff -{name}red```|
+|/api/hello?name={name}|GET|Print hello, {name} !|
 
+List of User routes:
 
-<!-- |/api/users/:id|*6.28*|2048|
-|/api/users/:id|*6.28*|2048|
-|/api/users/:id|*6.28*|2048|
-|/api/users/:id|*6.28*|2048|
-|/api/users/:id|*6.28*|2048| -->
+|Routes|HTTP|Description|
+|---|---|---|
+|/api/users|GET|Get all the users|
+|/api/users/:id|GET|Get single user|
+|/api/users|POST|create a user|
+|/api/users/:id|DELETE|delete a user|
+|/api/users/:id|PUT|update a user with new info|
+|/api/users/:id|PATCH|update a user with specific new info|
 
+List of filter routes:
+|Routes|HTTP|Description|
+|---|---|---|
+|/api/users?name="{name}"|GET|Get {name} match in users|
+|/api/users?name="{na}"|GET|Get {na} in like in users|
+|/api/users|POST|create a user|
+|/api/users/:id|DELETE|delete a user|
+|/api/users/:id|PUT|update a user with new info|
 
-```diff
-+ this text is highlighted in green
-- this text is highlighted in
-```
+## Usage
+
+With only npm:
+
+npm install
+npm start
+npm run dev
+
+Access the website via ```dif http://localhost:3000``` or API via ```dif http://localhost:3000/api```.
