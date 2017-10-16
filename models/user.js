@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     username: {
       type: DataTypes.STRING,
       validate: {
-        isUnique: (value, next)=> {
+        isUnique: function(value, next) {
           User.findOne({
               where: {
                 username: value,
@@ -57,11 +57,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     role: DataTypes.STRING
   })
-  User.beforeCreate((user)=>{
+  User.beforeCreate((user) => {
     var hash = getHash(user.password)
     user.password = hash;
   })
-  User.beforeUpdate((user)=>{
+  User.beforeUpdate((user) => {
     var hash = getHash(user.password)
     user.password = hash;
   })
