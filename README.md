@@ -1,12 +1,17 @@
 # My First Applications API
+
 Demo app with basic REST API
+
 # REST API
+
 List of basic routes :
+
 | Route | HTTP | Description |
 | ------ | ------ | ------ |
 | `${/api/hello?name={name}` | GET | Print hello, {name} !
 
 List of user routes :
+
 | Route | HTTP | Description |
 | ------ | ------ | ------ |
 | `${/api/users}` | GET | Get all the users
@@ -17,6 +22,7 @@ List of user routes :
 | `${/api/users/:id}` | PATCH | Update a user with specific new info
 
 List of filter routes :
+
 | Route | HTTP | Description |
 | ------ | ------ | ------ |
 |  `${/api/users?name={"name"}` | GET | Get `${name}` match in users
