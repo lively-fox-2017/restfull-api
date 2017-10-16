@@ -116,7 +116,40 @@ class Api{
   }
 
   static updateUser(req, res){
+    let id = req.params.id;
+    let result={};
+    Models.User.findById(id).then((user)=>{
+      if(user){
+        result.data={before:user};
+        user.username=req.body.username;
+        if(user.password!= encrypt(req.body.password, user.salt) ){
+          let salt = generateRandom(5);
+          user.password = encrypt(req.body.password, salt);
+          user.salt = salt;
+        }
+        user.role=req.body.role;
+        user.save().then(()=>{
+          result.message = 'Berhasil mengubah user'
+          result.data={
+            before:{
+              username:user.previous('username'),
+              password:user.previous('password')==user.password?'same':'old',
+              role:user.previous('role'),
 
+            },
+            after:{
+              username:user.username,
+              password:user.previous('password')==user.password?'same':'new',
+              role:user.role,
+
+            }
+          }
+          res.status(200).json(result)
+        }).catch((err)=>{
+          res.status(200).json(internalHelper.failedRequest('Gagal update user'))
+        })
+      }
+    })
   }
 }
 
