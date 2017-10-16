@@ -4,7 +4,7 @@ list of basic routes:
 
 |Routes|HTTP|Description|
 |---|---|---|
-|/api/hello?name={name}|GET|Print hello, diff ```-{name}red```|
+|/api/hello?name={name}|GET|Print hello,  ```diff -{name}red```|
 
 
 <!-- |/api/users/:id|*6.28*|2048|
