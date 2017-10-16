@@ -2,9 +2,21 @@ const Model = require('../models');
 
 class UserController {
 
+  static notFound(req, res) {
+
+    res.status(400).json({ message: 'user not found' });
+
+  }
+
   static getAll (req, res) {
 
-    Model.User.all({ order: [ [ 'createdAt', 'DESC' ] ] }).then((users) => {
+    const options = {
+      order: [
+        [ 'createdAt', 'DESC' ]
+      ]
+    };
+
+    Model.User.all(options).then((users) => {
 
       res.status(200).json(users);
 
@@ -14,12 +26,12 @@ class UserController {
 
   static create (req, res) {
 
-    Model.User.create({
-
+    const fields = {
       username: req.body.username,
       password: req.body.password
+    };
 
-    }).then((user) => {
+    Model.User.create(fields).then((user) => {
 
       res.status(201).json({
         message: 'user successfully created',
@@ -34,7 +46,10 @@ class UserController {
 
     Model.User.findById(req.params.id).then((user) => {
 
-      res.status(200).json(user);
+      if (user)
+        res.status(200).json(user);
+      else
+        UserController.notFound(req, res);
 
     });
 
@@ -42,15 +57,19 @@ class UserController {
 
   static deleteById (req, res) {
 
-    Model.User.destroy({
-
+    const options = {
       where: { id: req.params.id }
+    };
 
-    }).then((user) => {
+    Model.User.destroy(options).then((user) => {
 
-      res.status(200).json({
-        message: 'user successfully deleted'
-      });
+      if (user) {
+        res.status(200).json({
+          message: 'user successfully deleted'
+        });
+      } else {
+        UserController.notFound(req, res);
+      }
 
     });
 
@@ -58,20 +77,25 @@ class UserController {
 
   static updateById (req, res) {
 
-    Model.User.update(
-      {
-        username: req.body.username,
-        password: req.body.password
-      },
-      {
-        where: { id: req.params.id },
-        individualHooks: true
-      }
-    ).then((user) => {
+    const fields = {
+      username: req.body.username,
+      password: req.body.password
+    };
 
-      res.status(200).json({
-        message: 'user successfully updated'
-      });
+    const options = {
+      where: { id: req.params.id },
+      individualHooks: true
+    };
+
+    Model.User.update(fields, options).then((user) => {
+
+      if (user) {
+        res.status(200).json({
+          message: 'user successfully updated'
+        });
+      } else {
+        UserController.notFound(req, res);
+      }
 
     });
 
