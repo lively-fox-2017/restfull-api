@@ -1,4 +1,6 @@
 const User = require('../models/user')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 module.exports = {
   findAll: (req, res) => {
@@ -11,9 +13,12 @@ module.exports = {
     })
   },
   createUser: (req, res) => {
+    var salt = bcrypt.genSaltSync(10);
+    var hash = bcrypt.hashSync(req.body.password, salt);
     let userData = new User({
       username: req.body.username,
-      password: req.body.password
+      password: hash,
+      role: req.body.role
     })
     userData.save((err, resultUser) => {
       if(err){
