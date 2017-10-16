@@ -65,7 +65,7 @@ class User{
         .then(()=>{
             res.send('user berhasil di update')
         })
-        .catch(err=>{
+        .catch(err=>{ 
             res.send(err)
         })
         
