@@ -18,7 +18,7 @@ router.post('/users', checkAdmin,Users.signup)
 
 router.delete('/users/:id' ,checkAdmin , Users.deleteUser )
 
-router.put('/users/:id' ,checkAdmin , Users.editUser )
+router.put('/users/:id' ,checkUser , Users.editUser )
 
 
 module.exports = router;
