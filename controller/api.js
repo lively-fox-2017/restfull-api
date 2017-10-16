@@ -27,6 +27,8 @@ class Api{
         }
       }
       res.status(201).json(result);
+    }).catch((err)=>{
+      res.status(400).json(internalHelper.failedRequest('Bad request'))
     })
   }
 
@@ -66,6 +68,8 @@ class Api{
         }else{
           res.status(200).json(internalHelper.failedRequest('Gagal login'))
         }
+      }).catch((err) => {
+        res.status(400).json(internalHelper.failedRequest('Bad request'))
       })
     }else{
       res.status(200).json(internalHelper.failedRequest('Gagal login'))
@@ -107,7 +111,7 @@ class Api{
           res.status(200).json(result);
         })
       }else{
-        res.status(200).json(internalHelper.failedRequest('User tidak ditemukan'))
+        res.status(400).json(internalHelper.failedRequest('User tidak ditemukan'))
       }
 
     }).catch((err) => {
@@ -148,6 +152,8 @@ class Api{
         }).catch((err)=>{
           res.status(200).json(internalHelper.failedRequest('Gagal update user'))
         })
+      }else{
+        res.status(400).json(internalHelper.failedRequest('Gagal menemukan user'))
       }
     })
   }
