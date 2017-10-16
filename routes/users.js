@@ -1,6 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const verifyToken = require('../helpers/verifyToken');
+const checkPrivilege = require('../helpers/checkPrivilege');
 const UserCtrl = require('../controllers/userCtrl');
+
+router.use(verifyToken);
+router.use(checkPrivilege);
 
 // Get users listing
 router.get('/', UserCtrl.getUsers);
@@ -12,7 +17,7 @@ router.get('/:id', UserCtrl.getUser);
 router.post('/', UserCtrl.createUser);
 
 // Delete a user
-router.delete('/', UserCtrl.deleteUser);
+router.delete('/:id', UserCtrl.deleteUser);
 
 // Update a specific user info
 router.put('/:id', UserCtrl.updateUser);
