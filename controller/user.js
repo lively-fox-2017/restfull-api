@@ -1,7 +1,6 @@
 const model = require('../models');
 const key = 'enkripsinya'
 const jwt = require('jsonwebtoken')
-const SignIn = require('./signin')
 const bcrypt = require('bcrypt');
 
 class User{
@@ -39,21 +38,6 @@ class User{
 
     }
 
-
-    static create(req, res){
-        model.User.create({
-            username: req.body.username,
-            password: req.body.password,
-            role: req.body.role
-        })
-        .then(data=>{
-            res.send(data)
-        })
-        .catch(err=>{
-            res.send(err)
-        })
-    }
-
     static findById(req, res){
         model.User.findById(req.params.id)
         .then(row=>{
@@ -65,10 +49,14 @@ class User{
     }
 
     static update(req, res){
+        var salt = bcrypt.genSaltSync(10)
+        var password = bcrypt.hashSync(req.body.password, salt)
+        let hashpassword = password
         model.User.update({
             username: req.body.username,
-            password: req.body.password,
-            role: req.body.role
+            password: hashpassword,
+            role: req.body.role,
+            salt: salt
         },{
             where: {
                 id : req.params.id

@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt');
 const key = 'enkripsinya'
 
-
 class SignIn {
     static signIn(req, res, next) {
         model.User.findOne({
@@ -20,7 +19,7 @@ class SignIn {
 
                 if (dataUser.password === hashPassword && dataUser.username === req.body.username){
                     var payload = {
-                        exp: Math.floor(Date.now() / 1000) + (60),
+                        exp: Math.floor(Date.now() / 1000) + (60*60),
                         username: dataUser.username,
                         role: dataUser.role
                     }
