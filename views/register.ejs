@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <form action='/api/signup' method="POST">
+            <input type="text" name='name'>
+            <input type="password" name="password">
+            <select name="admin">
+                <option value="admin">Admin</option>
+                <option value="noadmin">Non Admin</option>
+            </select>
+            <select name="auth">
+                <option value="auth">Authenticated User</option>
+                <option value="noauth">No Auth</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+        <a href='/api'>Log In</a>
+    </body>
+</html>
