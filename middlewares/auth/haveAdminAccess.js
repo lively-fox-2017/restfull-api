@@ -4,12 +4,12 @@ module.exports = (req, res, next) => {
 			next();
 		} else {
 			res.status(401).send({
-				message: 'Unauthorized: You do not have access to this feature'
+				message: 'Unauthorized: You do not have access to this feature.'
 			});
 		}
 	} else {
 		res.status(401).send({
-			message: 'Unauthorized: You do not have access to this feature'
+			message: 'Unauthorized: You do not have access to this feature. Sign up/Sign in to get access token.'
 		});
 	}
 }
