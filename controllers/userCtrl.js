@@ -22,9 +22,10 @@ class UserCtrl {
         data:inserted
       })
     }).catch((err)=>{
+      console.log(err);
       res.json({
         message:'Error when Inserting',
-        error:err[0]
+        error:err
       })
     })
   }
@@ -58,9 +59,10 @@ class UserCtrl {
         data:updated[1]
       })
     }).catch((err)=>{
+      console.log(err);
       res.json({
         message:'Error when Updating',
-        error:err[0]
+        error:err
       })
     })
   }
@@ -75,9 +77,10 @@ class UserCtrl {
         data:deleted
       })
     }).catch((err)=>{
+      console.log(err);
       res.json({
         message:'Error when Deleting',
-        error:err[0]
+        error:err
       })
     })
   }
