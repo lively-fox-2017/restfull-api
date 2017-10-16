@@ -12,3 +12,6 @@ GET | /api/users/:id | Get a single user info (Admin and authenticated user Requ
 POST | /api/users | Create a user (Admin Required)
 DELETE | /api/users/:id | Delete a user (Admin Required)
 PUT | /api/users/:id | Update a user with new info (Admin and authenticated user Required)
+
+## Heroku Link
+[RESTfull Auth](https://restfullauth-livelyfox.herokuapp.com/)
