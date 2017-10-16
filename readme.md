@@ -12,6 +12,7 @@ List of basic routes :
 
 List of user routes :
 
+```sh
 | Route | HTTP | Description |
 | ------ | ------ | ------ |
 | `/api/users` | GET | Get All The Users |
@@ -20,6 +21,7 @@ List of user routes :
 | `/api/users/:id` | DELETE | Delete a User |
 | `/api/users/:id` | PUT | Update a User With New Info |
 | `/api/users/:id` | PATCH | Update a User With Spesific New Info |
+```
 
 List of filter routes :
 
