@@ -10,7 +10,7 @@ List of User routes:
 
 |Routes|HTTP|Description|
 |---|---|---|
-|`/api/users|GET`|Get all the users|
+|`/api/users`|GET`|Get all the users|
 |`/api/users/:id`|GET|Get single user|
 |`/api/users`|POST|create a user|
 |`/api/users/:id`|DELETE|delete a user|
