@@ -1,5 +1,6 @@
 # RESTful API DEMO
 Demo app with basic REST API.
+URL: `rest-bamkurniawan-livelyfox.herokuapp.com`
 
 ## REST API
 List of basic routes:
