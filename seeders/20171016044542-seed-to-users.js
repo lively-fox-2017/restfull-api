@@ -16,6 +16,7 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [{
       username: 'sisinduku',
       password: encryptAES256CTR('123'),
+      role: 'admin',
       fullname: 'saptanto sindu',
       email: 'saptanto.sindu@gmail.com',
       createdAt: new Date(),
@@ -23,6 +24,7 @@ module.exports = {
     }, {
       username: 'siapa',
       password: encryptAES256CTR('123'),
+      role: 'admin',
       fullname: 'siapa aja',
       email: 'siapa@gmail.com',
       createdAt: new Date(),
