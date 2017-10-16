@@ -5,7 +5,7 @@ list of basic routes:
 
 |Routes|HTTP|Description|
 |---|---|---|
-|/api/hello?name={name}|GET|Print hello, {name} !|
+|`/api/hello?name={name}`|GET|Print hello, {name} !|
 
 List of User routes:
 
