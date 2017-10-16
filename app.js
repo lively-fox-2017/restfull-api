@@ -9,6 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var signup = require('./routes/signup');
 var signin = require('./routes/signin');
+const env = process.env.NODE_ENV || "development";
 // var data = require('./routes/data')
 
 var app = express();
