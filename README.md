@@ -16,10 +16,13 @@ Demo app with basic REST API
 | `/api/signup`     | POST          | Sign up with a new user info                           |
 | `/api/signin`     | POST          | Sign in while get an access token based on credentials |
 
-## Usage
+## Locally
 ```
   $ npm install
   $ npm start
 ```
 
-Access the API via `http://localhost:3000/api`
+And then access the API via [http://localhost:3000](http://localhost:3000)
+
+## Heroku
+[http://dimitri-restful-api.herokuapp.com](http://dimitri-restful-api.herokuapp.com)
