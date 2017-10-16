@@ -12,7 +12,7 @@ List of basic routes :
 
 List of user routes :
 
-```sh
+```
 | Route | HTTP | Description |
 | ------ | ------ | ------ |
 | `/api/users` | GET | Get All The Users |
