@@ -26,10 +26,15 @@ class Users {
   }
 
   static updateUsers(req,res){
+    var salt = bcrypt.genSaltSync(8);
+    // user.salt = salt
+    var hash = bcrypt.hashSync(req.body.password, salt);
+    // user.password = hash;
     Model.User.update({
       name: req.body.name,
-      password: req.body.password,
-      role: req.body.role
+      password: hash,
+      role: req.body.role,
+      salt: req.body.salt
     },{
       where: {
         id: req.params.id
