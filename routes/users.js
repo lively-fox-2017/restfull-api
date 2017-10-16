@@ -3,7 +3,7 @@ var router = express.Router();
 var userController = require('../controllers/user')
 
 /* GET users listing. */
-router.get('/', userController.viewUsers);
+router.get('/',userController.valLogin,userController.viewUsers);
 
 /* CREATE users listing. */
 router.post('/', userController.createUsers);

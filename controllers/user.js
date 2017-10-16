@@ -1,5 +1,6 @@
 const Model = require('../models')
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 
 class Users {
@@ -39,11 +40,11 @@ class Users {
     })
   }
 
-  static viewUsers(req,res){
+  static viewUsers(req,res,next){
     Model.User.findAll()
     .then((data)=>{
       res.send(data)
-    })
+      });
   }
 
   static signupUsers(req,res){
@@ -62,13 +63,31 @@ class Users {
       where: {
         name: req.body.name
       }
-    }).then(user=>{
+    })
+    .then(user=>{
       if(user==null){
         res.json('Anda Belum Masukan Data !')
       } else if(bcrypt.hashSync(req.body.password,user.salt) === user.password){
-        res.json('Selamat Anda Berhasil Login')
+        var token = jwt.sign({
+          data: req.body.name,
+          role: req.body.role,
+          exp: Math.floor(Date.now()/1000)+(60*60)
+        }, 'Pemain no 7 Real Madrid')
+        res.send({
+          "Login":"Selamat Anda Berhasil Login",
+          "Message":"Username & Role Kamu Match !",
+          token:token
+        })
       } else if(bcrypt.hashSync(req.body.password,user.salt) !== user.password){
         res.json('Gagal Login, Password Salah !')
+      }
+    })
+  }
+
+  static valLogin(req,res,next){
+    jwt.verify(req.headers.token, 'Pemain no 7 Real Madrid', function(err, decoded) {
+      if(decoded.role === 'admin'){
+        next()
       }
     })
   }
