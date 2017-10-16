@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const api = require('../controller/api');
 
-router.post('/signup', api.signup);
+router.post('/signup', api.createUser);
 
 router.post('/signin', api.signin);
 
