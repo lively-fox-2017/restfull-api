@@ -16,10 +16,15 @@ class UserCtrl {
       role:req.body.role
     }
     models.User.create(data).then((inserted)=>{
-      data.id = inserted.id;
+      var returnedData = {
+        username : inserted.username,
+        firstName : inserted.firstName,
+        lastName : inserted.lastName,
+        email : inserted.email,
+      };
       res.status(200).json({
         message:'Successfully added',
-        data:inserted
+        data:returnedData
       })
     }).catch((err)=>{
       console.log(err);
@@ -54,9 +59,15 @@ class UserCtrl {
         id:req.params.id
       }
     }).then((updated)=>{
+      var returnedData = {
+        username : updated.username,
+        firstName : updated.firstName,
+        lastName : updated.lastName,
+        email : updated.email,
+      };
       res.json({
         message:'Success Update',
-        data:updated[1]
+        data:returnedData
       })
     }).catch((err)=>{
       console.log(err);

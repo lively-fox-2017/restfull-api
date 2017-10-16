@@ -39,7 +39,12 @@ class AuthCtrl {
       role:req.body.role
     }
     models.User.create(data).then((inserted)=>{
-      data.id = inserted.id;
+      var returnedData = {
+        username : inserted.username,
+        firstName : inserted.firstName,
+        lastName : inserted.lastName,
+        email : inserted.email,
+      };
       res.status(200).json({
         message:'Successfully Register',
         data:inserted
