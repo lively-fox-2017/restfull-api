@@ -9,14 +9,14 @@ module.exports = (req, res, next) => {
 				next();
 			} else {
 				res.status(401).send({
-					status: 401;
+					status: 401,
 					message: 'Unauthorized: You do not have access to this feature. Sign up/Sign in.'
 				});
 			}
 		});
 	} else {
 		res.status(401).send({
-			status: 401;
+			status: 401,
 			message: 'Unauthorized: You do not have access to this feature. Sign up/Sign in.'
 		});
 	}
