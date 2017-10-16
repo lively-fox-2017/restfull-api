@@ -14,6 +14,8 @@ List of routes:
 
 | Route  |  HTTP |  Description |
 | ------------ | ------------ | ------------ |
+|  `/api/signup` |POST  |  Sign up with new user info |
+|  `/api/signin` |  POST  |  Sign in while get an access token based on credentials |
 |  `/api/users` |GET  |  Get all the users |
 |  `/api/users/:id` |  GET  |  Get all the users |
 |  `/api/users/:id`  |  GET |  Get a single user  |
