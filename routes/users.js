@@ -14,4 +14,5 @@ router.delete('/:id', User.deleteData)
 /* UPDATE users listing. */
 router.put('/:id', User.updateData)
 
+
 module.exports = router;
