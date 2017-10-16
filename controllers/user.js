@@ -11,7 +11,7 @@ class User {
   static findAll(req,res,next) {
     // Validasi Token
     jwt.verify(req.headers.token, (key), function(err, decoded) {
-      console.log(decoded.role) // bar
+      // console.log(decoded.role) // bar
       if (decoded.role == 'admin') {
         Model.User.findAll()
         .then(dataUser => {

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "noden ./bin/www"
   },
   "dependencies": {
     "bcrypt": "^1.0.3",
@@ -16,6 +16,7 @@
     "morgan": "~1.8.1",
     "pg": "^7.3.0",
     "sequelize": "^4.14.0",
+    "sequelize-cli": "^3.0.0",
     "serve-favicon": "~2.4.2"
   }
 }
