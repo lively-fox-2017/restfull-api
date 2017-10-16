@@ -32,4 +32,4 @@ List of filter routes:
 
 ## Heroku Link
 
-[https://ian-api-auth.herokuapp.com](https://ian-api-auth.herokuapp.com "Ian Heroku API Auth")
+[https://ian-api-auth.herokuapp.com/api](https://ian-api-auth.herokuapp.com/api "Ian Heroku API Auth")

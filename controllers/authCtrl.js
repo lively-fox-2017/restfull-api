@@ -24,7 +24,7 @@ class AuthCtrl {
     }).catch((err)=>{
       res.json({
         message:'Error when login catch',
-        error:err
+        error:err[0]
       })
     })
   }
@@ -46,7 +46,7 @@ class AuthCtrl {
     }).catch((err)=>{
       res.json({
         message:'Error when Register',
-        error:err
+        error:err[0]
       })
     })
   }

@@ -24,7 +24,7 @@ class UserCtrl {
     }).catch((err)=>{
       res.json({
         message:'Error when Inserting',
-        error:err
+        error:err[0]
       })
     })
   }
@@ -60,7 +60,7 @@ class UserCtrl {
     }).catch((err)=>{
       res.json({
         message:'Error when Updating',
-        error:err
+        error:err[0]
       })
     })
   }
@@ -77,7 +77,7 @@ class UserCtrl {
     }).catch((err)=>{
       res.json({
         message:'Error when Deleting',
-        error:err
+        error:err[0]
       })
     })
   }
