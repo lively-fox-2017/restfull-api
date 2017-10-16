@@ -36,7 +36,7 @@ With only npm:
 >npm start
 >npm run dev
 
-Access the website via [`http://localhost:3000`][3] or API via [`http://localhost:3000/api`][3]
+Access the website via [`http://localhost:3000`][3] or API via [`http://localhost:3000/api`][3] or via Heroku [https://jason-restful-livelyfox.herokuapp.com/api/users][3]
 
 --------
 
