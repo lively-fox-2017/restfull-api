@@ -30,6 +30,7 @@ Route | HTTP | Description
 `/api/users?name="{na}"` | GET | Get {na} match in users!
 
 ##USAGE
+
 With only npm:
 
 >npm install
