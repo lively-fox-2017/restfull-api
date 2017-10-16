@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 function parseToken(req, res, callback){
   let token =  req.headers.token;
-  jwt.verify(req.headers.token, process.env.saltForToken, function(err, decoded){
+  jwt.verify(req.headers.token, 'sshhh its secret', function(err, decoded){
     if(err){
       res.status(403).json({message:'Forbidden access',data:{}});
     }

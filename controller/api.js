@@ -48,7 +48,7 @@ class Api{
               role:user.role
             }
             //console.log(rawData);
-            jwt.sign(rawData ,process.env.saltForToken , function(err, token){
+            jwt.sign(rawData ,'sshhh its secret' , function(err, token){
               //console.log(token,'asdlkajsdlijwailwjdoiawj092341-0293=1-=2pe][]');
               if(err){
                 //console.log('gagal');
