@@ -16,7 +16,7 @@ List of user routes :
 | ------ | ------ | ------ |
 | `/api/users` | GET | Get All The Users |
 | `/api/users/:id` | GET | Get a Single User |
-| `/api/users | POST` | Create a User |
+| `/api/users` | POST` | Create a User |
 | `/api/users/:id` | DELETE | Delete a User |
 | `/api/users/:id` | PUT | Update a User With New Info |
 | `/api/users/:id` | PATCH | Update a User With Spesific New Info |
@@ -36,3 +36,4 @@ $ npm install
 $ npm start
 $ npm run dev
 ```
+Access the website via `http://localhost:3000` or API via `http://localhost:3000/api`
