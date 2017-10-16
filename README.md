@@ -22,8 +22,8 @@ List of filter routes:
 
 |Routes|HTTP|Description|
 |---|---|---|
-|`/api/users?name="{name}"`|GET|Get {name} match in users|
-|`/api/users?name="{na}"`|GET|Get {na} in like in users|
+|`/api/users?name="{name}"`|GET|Get `{name}` match in users|
+|`/api/users?name="{na}"`|GET|Get `{na}` in like in users|
 |`/api/users`|POST|create a user|
 |`/api/users/:id`|DELETE|delete a user|
 |`/api/users/:id`|PUT|update a user with new info|
