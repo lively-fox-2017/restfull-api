@@ -10,6 +10,7 @@ List of basic routes:
 | `/api/hello?name={name}` | GET  | Print hello, `{name}` !|
 
 List of user routes:
+
 | Route                   | HTTP   | Description            			 				|
 |-------------------------|--------|--------------------------------------|
 | `/api/users` 			  		| GET    | Print hello, `{name}` !			 				|
@@ -19,7 +20,8 @@ List of user routes:
 | `/api/users/:id`		  	| PUT	   | Update a user with new info 		 			|
 | `/api/users/:id`		  	| PATCH  | Update a user with specific new info	|
 
-List of filter routes
+List of filter routes:
+
 | Route											| HTTP | Description								|
 |---------------------------|------|----------------------------|
 |`/api/users?name="{name}"` | GET  | Get `{name}` match in users|
