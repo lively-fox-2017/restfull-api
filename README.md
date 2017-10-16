@@ -35,4 +35,4 @@ npm install
 npm start
 npm run dev
 
-Access the website via ```dif http://localhost:3000``` or API via ```dif http://localhost:3000/api```.
+Access the website via ```diff- http://localhost:3000``` or API via ```dif- http://localhost:3000/api```.
