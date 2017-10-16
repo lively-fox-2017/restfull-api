@@ -1,11 +1,11 @@
 # REST API
 
 list of basic routes:
-
+```sh
 |Routes|HTTP|Description|
 |---|---|---|
 |`/api/hello?name={name}`|GET|Print hello, {name} !|
-
+```
 List of User routes:
 
 |Routes|HTTP|Description|
@@ -37,4 +37,5 @@ List of filter routes:
 ```
 
 
-Access the website via   `http://localhost:3000` or API via - `http://localhost:3000/api`.
+Access the website via   `http://localhost:3000` or API via
+`http://localhost:3000/api`.
