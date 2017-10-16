@@ -45,6 +45,7 @@ class Auth {
 		.then(result => {
 			if (result) {
 				const data = {
+					id: userData.id,
 					username: userData.username,
 					role: userData.role
 				}
