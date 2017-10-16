@@ -2,12 +2,6 @@ My App Name
 ===================
 Demo app with basic REST API
 
-
-Hey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class="icon-cog"></i> **Settings** dialog.
-
-----------
-
-
 REST API
 ==================
 
@@ -15,27 +9,34 @@ List of basic routes:
 
 | Route | HTTP | Description |
 | :----------- |	:---------- | :----------:|
-| [/api/hello?name={name}][3] | GET | Print hello, {name} !
+| [`/api/hello?name={name`}][3] | GET | Print hello, {name} !
 
 List of user routes:
 
 | Route | HTTP | Description |
 | :----------- |	:---------- | ---------- |
-| [/api/users][3] | GET | Get all the users |
-| [/api/users/:id][3] | GET | Get a single user |
-| [/api/users][3] | POST | Create a user |
-| [/api/users/:id][3] | DELETE | Delete a user |
-| [/api/users/:id][3] | PUT | Update a user with new info |
-| [/api/users/:id][3] | PATCH | Update a user with specific new info |
+| [`/api/users`][3] | GET | Get all the users |
+| [`/api/users/:id`][3] | GET | Get a single user |
+| [`/api/users`][3] | POST | Create a user |
+| [`/api/users/:id`][3] | DELETE | Delete a user |
+| [`/api/users/:id`][3] | PUT | Update a user with new info |
+| [`/api/users/:id`][3] | PATCH | Update a user with specific new info |
 
 List of fiter routes:
 
 | Route | HTTP | Description |
 | :----------- |	:---------- | ---------- |
-| [/api/users?name="{name}"][3] | GET | Get ${name} the users |
-| [/api/users?name="${na}"][3] | GET | Get {na} single user |
+| [`/api/users?name="{name}"`][3] | GET | Get ${name} the users |
+| [`/api/users?name="${na}"`][3] | GET | Get {na} single user |
 
+Usage
+With only npm:
 
+>npm install
+>npm start
+>npm run dev
+
+Access the website via [`http://localhost:3000`][3] or API via [`http://localhost:3000/api`][3]
 
 --------
 
