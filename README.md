@@ -40,3 +40,13 @@ Access the website via `${http://localhost:3000}` or API via
 `${http://localhost:3000/api}`.
 
 Access Online : https://restfull-api-harynp.herokuapp.com/
+List of user routes :
+
+| Route | HTTP | Description |
+| ------ | ------ | ------ |
+| `${https://restfull-api-harynp.herokuapp.com/users}` | GET | Get get user
+| `${https://restfull-api-harynp.herokuapp.com/users}` | POST | Get post user
+| `${https://restfull-api-harynp.herokuapp.com/signup}` | POST | Create a user
+| `${https://restfull-api-harynp.herokuapp.com/login}` | POST | Get Token a users
+| `${https://restfull-api-harynp.herokuapp.com/users/:id}` | DELETE | Delete users
+| `${https://restfull-api-harynp.herokuapp.com/users/:id}` | PUT | Update a user with specific new info
