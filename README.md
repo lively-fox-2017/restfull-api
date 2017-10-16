@@ -29,11 +29,11 @@ List of filter routes:
 
 ## Usage
 
-With only npm:
+  With only npm:
 
-  npm install
-  npm start
-  npm run dev
+    npm install
+    npm start
+    npm run dev
 
 ```diff
 Access the website via  - http://localhost:3000 or API via - http://localhost:3000/api.
