@@ -29,3 +29,7 @@ List of filter routes:
 | ------------- |:-------------:| -----:|
 | ``/api/users?name="{name}"``    | GET           | ``Get {name} match in users``  |
 | ``/api/users?name="{na}"``     | GET           | ``Get {na} like in users``  |
+
+## Heroku Link
+
+[I'm an inline-style link with title](https://ian-api-auth.herokuapp.com "Ian Heroku API Auth")
