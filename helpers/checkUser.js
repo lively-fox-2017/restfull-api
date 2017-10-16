@@ -6,7 +6,12 @@ function checkUser(req,res,next){
       res.json(200,{msg:'please login'})
     }
     else{
-      next()
+      if(decoded.userid==req.params.id){
+        next()
+      }
+      else{
+        res.json(200,{msg:'not same user'})
+      }
     }
   });
 }

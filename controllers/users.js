@@ -44,7 +44,8 @@ class Users{
         if(dataUser.password==encrypt(req.body.password,dataUser.salt)){
           jwt.sign({
             username:dataUser.username,
-            role :dataUser.role
+            role :dataUser.role,
+            userid:dataUser.id
           },secret,(err,token)=>{
             res.json(200,{msg:'hi users',token:token})
           })
