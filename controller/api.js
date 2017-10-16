@@ -2,6 +2,11 @@
 const Models = require('../models');
 const encrypt = require('../helpers/encrypt');
 const generateRandom = require('../helpers/generateRandom');
+const jwt = require('jsonwebtoken');
+
+function failedRequest(message){
+  return {message, data:{}}
+}
 
 class Api{
 
@@ -27,23 +32,51 @@ class Api{
     let inputUsername = req.body.username;
     let inputPassword = req.body.password;
     let result = {};
-    //console.log(inputPassword);
-    Models.User.findOne({where:{username:inputUsername}}).then((user)=>{
-      if(user){
-        let encryptInput = encrypt(inputPassword, user.salt);
-        if(encryptInput==user.password){
-          
+    //console.log(process.env.saltForToken);
+    if (inputPassword && inputUsername){
+      Models.User.findOne({where:{username:inputUsername}}).then((user)=>{
+        if(user){
+          let encryptInput = encrypt(inputPassword, user.salt);
+          if(encryptInput==user.password){
+                  //  console.log(user);
+            let rawData= {
+              username:user.username,
+              role:user.role
+            }
+            console.log(rawData);
+            jwt.sign(rawData ,process.env.saltForToken , function(err, token){
+              console.log(token,'asdlkajsdlijwailwjdoiawj092341-0293=1-=2pe][]');
+              if(err){
+                console.log('gagal');
+              }else{
+                result={
+                  message:'Berhasil login',
+                  data:{
+                    token
+                  }
+                }
+                res.status(200).json(result)
+              }
+            })
+          }else{
+
+            res.status(200).json(failedRequest('Gagal login'))
+          }
+        }else{
+          result.message='Gagal login'
+          result.data={};
+          res.status(200).json(failedRequest('Gagal login'))
         }
-      }else{
-        result.message='Gagal login'
-        result.data={};
-        res.status(200).json(result)
-      }
-    })
+      })
+    }else{
+      result.message='Gagal login'
+      result.data={};
+      res.status(200).json(failedRequest('Gagal login'))
+    }
   }
 
   static getUsers(req, res){
-
+    
   }
 
   static getUser(req, res){
