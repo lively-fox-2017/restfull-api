@@ -2,7 +2,7 @@
 
 list of basic routes:
 
-```sh
+```diff
 |Routes|HTTP|Description|
 |---|---|---|
 |`/api/hello?name={name}`|GET|Print hello, {name} !|
@@ -38,6 +38,9 @@ List of filter routes:
    npm run dev
 ```
 
+```diff
+- this will be highlighted in red
+```
 
 Access the website via   `http://localhost:3000` or API via
 `http://localhost:3000/api`.
