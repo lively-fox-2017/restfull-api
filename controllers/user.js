@@ -88,6 +88,8 @@ class Users {
     jwt.verify(req.headers.token, 'Pemain no 7 Real Madrid', function(err, decoded) {
       if(decoded.role === 'admin'){
         next()
+      } else {
+        res.send('Kamu Bukan Admin')
       }
     })
   }
