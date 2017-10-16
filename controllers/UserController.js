@@ -28,17 +28,24 @@ class UserController {
 
     const fields = {
       username: req.body.username,
-      password: req.body.password
+      password: req.body.password,
+      role: req.body.role
     };
 
-    Model.User.create(fields).then((user) => {
+    Model.User.create(fields)
+      .then((user) => {
 
-      res.status(201).json({
-        message: 'user successfully created',
-        user: user
+        res.status(201).json({
+          message: 'user successfully created',
+          user: user
+        });
+
+      })
+      .catch((err) => {
+
+        res.json({ errors: err.errors });
+
       });
-
-    });
 
   }
 
@@ -79,7 +86,8 @@ class UserController {
 
     const fields = {
       username: req.body.username,
-      password: req.body.password
+      password: req.body.password,
+      role: req.body.role
     };
 
     const options = {
@@ -87,17 +95,23 @@ class UserController {
       individualHooks: true
     };
 
-    Model.User.update(fields, options).then((user) => {
+    Model.User.update(fields, options)
+      .then((user) => {
 
-      if (user) {
-        res.status(200).json({
-          message: 'user successfully updated'
-        });
-      } else {
-        UserController.notFound(req, res);
-      }
+        if (user) {
+          res.status(200).json({
+            message: 'user successfully updated'
+          });
+        } else {
+          UserController.notFound(req, res);
+        }
 
-    });
+      })
+      .catch((err) => {
+
+        res.json({ errors: err.errors });
+
+      });
 
   }
 

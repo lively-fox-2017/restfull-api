@@ -4,8 +4,34 @@ const bcrypt = require('bcrypt');
 
 module.exports = (sequelize, DataTypes) => {
   var User = sequelize.define('User', {
-    username: DataTypes.STRING,
-    password: DataTypes.STRING
+    username: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Validation error: username is required'
+        }
+      },
+      unique: {
+        args: true,
+        msg: "Validation error: username already exists"
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Validation error: password is required'
+        }
+      }
+    },
+    role: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Validation error: role is required'
+        }
+      }
+    }
   });
 
   User.hook('beforeSave', (user, options) => {
