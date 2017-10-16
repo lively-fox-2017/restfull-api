@@ -8,4 +8,4 @@ List of basic routes:
 
 | Route | HTTP | Description |
 |-------|:----:|:-----------:|
-|/api/hello?name={name}|GET|Print hello, {name} !
+|<span style="color:red">/api/hello?name={name}</span>|GET|Print hello, {name} !
