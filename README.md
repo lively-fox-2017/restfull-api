@@ -29,7 +29,8 @@ Route | HTTP | Description
 `/api/users?name="{name}"` | GET | Get {name} match in users!
 `/api/users?name="{na}"` | GET | Get {na} match in users!
 
-##USAGE
+USAGE
+-----
 
 With only npm:
 
