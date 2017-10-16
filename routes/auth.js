@@ -7,3 +7,5 @@ router.post('/signup', AuthCtrl.signUp);
 
 // Signin to get access token
 router.post('/signin', AuthCtrl.signIn);
+
+module.exports = router;
