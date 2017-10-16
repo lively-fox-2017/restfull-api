@@ -28,5 +28,5 @@ List of basic routes:
 
 # Usage
 ## With only npm:
-**Acces the website via POSTMAN ** `https://restfullapibany.herokuapp.com/` **or API via**
+**Acces the website via** `http://localhost:3000` **or API via**
 `http://localhost:3000/api`**.**

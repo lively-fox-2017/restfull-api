@@ -2,6 +2,8 @@ const express = require('express');
 const data = require('../controllers/users');
 const router = express.Router();
 
+
+/* GET users listing. */
 router.get('/', data.validate, data.findAll)
 
 router.get('/:id', data.findById)
