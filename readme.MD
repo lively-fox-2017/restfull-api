@@ -10,8 +10,9 @@ List of basic routes:
 
 | Route | HTTP | Description |
 |---|:---:|:---:|
-|```diff/api/hello?name={name}```|GET|Print hello, `{name}` !|
-
+```diff
+|`/api/hello?name={name}`|GET|Print hello, `{name}` !|
+```
 
 List of user routes:
 
