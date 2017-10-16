@@ -1,9 +1,20 @@
 var express = require('express');
 var router = express.Router();
+const UserCtrl = require('../controllers/userCtrl');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+// Get users listing
+router.get('/', UserCtrl.getUsers);
+
+// Get specific user info
+router.get('/:id', UserCtrl.getUser);
+
+// Create a user
+router.post('/', UserCtrl.createUser);
+
+// Delete a user
+router.delete('/', UserCtrl.deleteUser);
+
+// Update a specific user info
+router.put('/:id', UserCtrl.updateUser);
 
 module.exports = router;
