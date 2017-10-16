@@ -31,9 +31,9 @@ List of filter routes:
 
   With only npm:
 ```sh
-   $ npm install
-   $ npm start
-   $ npm run dev
+   npm install
+   npm start
+   npm run dev
 ```
 
 
