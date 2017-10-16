@@ -12,16 +12,14 @@ List of basic routes :
 
 List of user routes :
 
-```diff
 | Route | HTTP | Description |
 | ------ | ------ | ------ |
-| - /api/users | GET | Get All The Users |
-| - /api/users/:id | GET | Get a Single User |
-| - /api/users | POST | Create a User |
-| - /api/users/:id | DELETE | Delete a User |
-| - /api/users/:id | PUT | Update a User With New Info |
-|  /api/users/:id | PATCH | Update a User With Spesific New Info |
-```
+| `/api/users` | GET | Get All The Users |
+| `/api/users/:id` | GET | Get a Single User |
+| `/api/users | POST` | Create a User |
+| `/api/users/:id` | DELETE | Delete a User |
+| `/api/users/:id` | PUT | Update a User With New Info |
+| `/api/users/:id` | PATCH | Update a User With Spesific New Info |
 
 List of filter routes :
 
