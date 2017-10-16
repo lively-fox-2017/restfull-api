@@ -20,6 +20,8 @@ Demo app with basic REST API
 ```
   $ npm install
   $ npm start
+  $ sequelize db:migrate
+  $ sequelize db:seed:all
 ```
 
 And then access the API via [http://localhost:3000](http://localhost:3000)
