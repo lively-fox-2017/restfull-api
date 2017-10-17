@@ -17,11 +17,18 @@ class Users {
   static deleteUsers(req,res){
     Model.User.destroy({
       where:{
-        id: req.params.id
+        id: req.params.id,
       }
     })
-    .then(()=>{
-      res.json('Berhasil dihapus')
+    .then(id=>{
+      Model.User.findOne()
+      .then(user=>{
+        res.send({
+          "message": "user deleted",
+          "name": user.name,
+          "role": user.role
+        })
+      })
     })
   }
 
@@ -58,8 +65,12 @@ class Users {
       password: req.body.password,
       role: req.body.role
     })
-    .then(()=>{
-    res.json('Berhasil buat signup')
+    .then((user)=>{
+      res.send({
+        "message": "Sign Up berhasil",
+        "name": user.name,
+        "role": user.role
+      })
     })
   }
 
