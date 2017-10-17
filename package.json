@@ -1,0 +1,33 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js ./bin/www",
+    "dev": "nodemon app.js ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pragistyo/rest-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pragistyo/rest-api/issues"
+  },
+  "homepage": "https://github.com/Pragistyo/rest-api#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^8.0.1",
+    "pg": "^7.3.0",
+    "sequelize": "^4.11.0",
+    "sequelize-cli": "^3.0.0"
+  }
+}
