@@ -1,4 +1,5 @@
 const model = require('../models');
+var dotenv = require('dotenv').config()
 var jwt = require('jsonwebtoken');
 const encryptAES256CTR = require('../helpers/encryptAES256CTR');
 const decryptAES256CTR = require('../helpers/decryptAES256CTR');
@@ -30,6 +31,7 @@ class AuthCtrl {
   }
 
   static signIn(req, res) {
+    console.log(process.env.SECRET);
     model.User.findOne({
         where: {
           username: req.body.username
@@ -46,7 +48,7 @@ class AuthCtrl {
             token: jwt.sign({
                 data: data,
               },
-              '53cr3tKEY', {
+              process.env.SECRET, {
                 expiresIn: '1h'
               })
           }
